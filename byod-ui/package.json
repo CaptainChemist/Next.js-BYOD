@@ -1,0 +1,46 @@
+{
+  "name": "byod-ui",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm-run-all build:*",
+    "build:js": "rollup -c",
+    "build:css": "NODE_ENV=production ./node_modules/tailwindcss/lib/cli.js -i ./src/styles/tailwind.css -o ./dist/main.css --minify",
+    "start": "npm-run-all --parallel start:*",
+    "start:js": "rollup -c -w",
+    "start:css": "NODE_ENV=development ./node_modules/tailwindcss/lib/cli.js -i ./src/styles/tailwind.css -o ./dist/main.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.21",
+    "rollup": "^2.79.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "tailwindcss": "^3.2.7",
+    "typescript": "^5.0.2",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.1"
+  }
+}
